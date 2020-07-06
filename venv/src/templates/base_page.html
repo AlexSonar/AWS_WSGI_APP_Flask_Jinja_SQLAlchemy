@@ -1,0 +1,20 @@
+{% include 'header.html' ignore missing %}
+{% block content -%}
+    {%- block mainmenu -%}
+        <ul class="mainmenu">
+             {% for m in menu %}
+             <li><a href="{{m.url}}">{{m.name}}</a></li>
+            {% endfor%}
+        </ul>
+    {% endblock mainmenu -%} 
+    <div class="clear"></div>
+    <div class="content"> 
+        {% if title %}
+            <H1>{{ title }}</H1>
+        {% else %}
+            <H1>All about Flask develop</H1>
+        {% endif %} 
+        <p>тест содержимого блока base_page</p>    
+{% endblock -%}
+    </div>
+{% include 'footer.html' %}

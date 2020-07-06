@@ -11,7 +11,8 @@
         <title>Про Flask</title>
     {% endif %}
 
-    <link rel="stylesheet" href="files/flask.css" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}" type="text/css">
     <script type="text/javascript" src=""></script>
     <link rel="shortcut icon" href="">        
 </head>
