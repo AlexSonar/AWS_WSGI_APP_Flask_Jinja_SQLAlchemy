@@ -8,8 +8,10 @@ venv/lib64
 venv/share/
 venv/src/not_for_git/
 target/
+node_modules/
 .vscode
 .idea
+.pytest_cache
 bin
 lib
 src/A000_Not_for_Git

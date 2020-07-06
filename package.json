@@ -1,0 +1,21 @@
+{
+  "name": "simple_site",
+  "version": "1.0.0",
+  "description": "simple site on Flask",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "testex"
+  },
+  "keywords": [
+    "siteex"
+  ],
+  "author": "Alex Sonar",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0"
+  }
+}

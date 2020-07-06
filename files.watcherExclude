@@ -1,0 +1,13 @@
+# https://code.visualstudio.com/docs/setup/linux#_visual-studio-code-is-unable-to-watch-for-file-changes-in-this-large-workspace-error-enospc
+"files.watcherExclude": {
+  "**/.idea": true,
+  "**/target/": true,
+  "**/venv/bin/": true,
+  "**/venv/etc/": true,
+  "**/venv/include/": true,
+  "**/venv/lib/": true,
+  "**/venv/lib64": true,
+  "**/venv/share/": true,
+  "**/.pytest_cache": true,
+  "**/venv/src/not_for_git": true
+}
