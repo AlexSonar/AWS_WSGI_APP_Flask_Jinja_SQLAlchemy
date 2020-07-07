@@ -1,4 +1,5 @@
 body {
-  font: 100% Helvetica, sans-serif;
-  color: rgb(104, 200, 97);
+  background-color: rgb(100, 100, 100);
+  font: 100% Helvetica, sans-serif, 16px;
+  color: rgb(222, 230, 240);
 }
