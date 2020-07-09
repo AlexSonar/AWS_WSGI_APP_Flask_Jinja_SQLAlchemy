@@ -3,10 +3,24 @@ import os
 from flask import Flask, render_template, request, g
 from FDataBase import FDataBase
 
-from dbconf.dbc import connect_db, dbcconf
+
+# configuration
+DATABASE = 'venv/db/wsgiappdb.db'
+DEBUG = True
+SECRET_KEY = 'dhgkikh6fhfg8ghmh3fg87f'
+USERNAME = 'admin'
+PASSWORD = 'secret'
+
+app = Flask(__name__)
+app.config.from_object(__name__)
+
+app.config.update(dict(DATABASE=os.path.join(app.root_path,'../db/wsgiappdb.db')))
 
 
-connect_db()
+def connect_db():
+    conn = sqlite3.connect(app.config['DATABASE'])
+    conn.row_factory = sqlite3.Row
+    return conn
 
 
 def create_db():
@@ -20,11 +34,15 @@ def create_db():
 
 # 
 
-create_db()
+# create_db()
 # or in Python console execute the: from dbc import create_db
 
 
-get_db()
+def get_db():
+    '''Соединение с БД, если оно еще не установлено'''
+    if not hasattr(g, 'link_db'):
+        g.link_db = connect_db()
+    return g.link_db
 
 
 
@@ -42,7 +60,7 @@ def index():
 
 @app.teardown_appcontext
 def close_db(error):
-    # Закрываем соединение с БД, если оно было установлено
+    '''Закрываем соединение с БД, если оно было установлено'''
     if hasattr(g, 'link_db'):
         g.link_db.close()
 
