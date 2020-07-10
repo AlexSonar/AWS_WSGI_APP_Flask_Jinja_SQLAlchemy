@@ -1,23 +1,10 @@
 from flask import Flask, render_template, request, flash, session, redirect, abort
 from jinja2 import Template
 from flask.helpers import url_for
-# from main_menu import mmenu
-# from main_menu import mmenu
 
 # import sys
-# sys.path.append("venv/src/parts")
+# sys.path.append("path/parts")
 # from main_menu import *
-
-
-# from venv.src.main_menu import mmenu
-# from venv.src.main_menu import mmenu
-
-# import venv.src.main_menu
-# from venv.src import main_menu
-# from venv.src.main_menu import mmenu
-# import main_menu
-
-# from parts import main_menu
 
 import main_menu
 from main_menu import mmenu
@@ -27,20 +14,6 @@ app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'dxjq4flx39cndidgcailfgjdgs67ns'
 menu = main_menu.mmenu()
-# menu = mmenu
-# menu = main_menu.mmenu
-# menu = main_menu.mmenu()
-# menu = ["<a href='about.html'>Установка</a> ", "Первое приложение ", "Обратая связь "]
-# menu = [
-#         {"name": "FLASK"
-#         , "url": "flask"},
-#         {"name": "JINJA", "url": "jinja"},
-#         {"name": "install & irst-app", "url": "install-flask"},
-#         {"name": "ABOUT", "url": "about"},
-#         {"name": "CONTACT", "url": "contact"},
-#         {"name": "lOGIN", "url": "login"}
-#         ]
-
 
 
 @app.route("/")
@@ -49,6 +22,7 @@ def index():
     # return "index"
     print("loaded" + url_for('index'))
     return render_template('index.html', title="Index page", menu=menu)
+
 
 @app.route("/login", methods=["POST", "GET"])
 def login():

@@ -6,12 +6,13 @@ html, body{
     width: 100%;
 }
 a {
-    color: #e0cda0;
+    color:  rgb(10, 192, 192);
     text-decoration: none;
 }
 
 a:hover {
-    color: #CC0000;
+    /* color: #CC0000; */
+    color: #00ffffff;
     text-decoration: underline;
 }
 
@@ -21,11 +22,14 @@ a:hover {
 
 ul.mainmenu {
     list-style: none;
-    background: #3F4137;
-    height: 60px;
+    /* background: #3F4137; */
+    /* background: #333333ff; */
+    background: #2c1141ff;
+    height: 99px;
     margin: 0;
     padding: 0;
-    color: #fdc073;
+    /* color: #fdc073; */
+    color: rgb(10, 192, 192);
     font-size: 20px;
     overflow: hidden;
 }
@@ -40,7 +44,8 @@ ul.mainmenu li.last {
 }
 
 ul.mainmenu li a:hover {
-    color: #FDA83D;
+    /* color: #FDA83D; */
+    color: #00ffffff;
 }
 
 div.content {
@@ -64,5 +69,6 @@ div.content {
     padding: 10px;
 }
 .flash.success {
-    border: 1px solid #21DB56;
+    /* border: 1px solid #21DB56; */
+    border: #00ffffff;
 }

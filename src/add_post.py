@@ -2,6 +2,7 @@ import sqlite3
 import os
 from flask import Flask, render_template, request, g
 from FDataBase import FDataBase
+from flask.helpers import flash
 
 
 # configuration
@@ -44,9 +45,8 @@ def get_db():
         g.link_db = connect_db()
     return g.link_db
 
-
-
 @app.route("/")
+@app.route("/index")
 def index():
     db = get_db()
     dbase = FDataBase(db)
@@ -60,7 +60,7 @@ def index():
 
 @app.teardown_appcontext
 def close_db(error):
-    '''Закрываем соединение с БД, если оно было установлено'''
+    '''Close connection to DB'''
     if hasattr(g, 'link_db'):
         g.link_db.close()
 
@@ -74,13 +74,13 @@ def addPost():
         if len(request.form['name']) > 4 and len(request.form['post']) > 10:
             res = dbase.addPost(request.form['name'], request.form['post'])
             if not res:
-                flash('Ошибка добавления статьи', category = 'error')
+                flash('Error post adition!', category = 'error')
             else:
-                flash('Статья добавлена успешно', category='success')
+                flash('Post aded sucsesfuly!', category='success')
         else:
-            flash('Ошибка добавления статьи', category='error')
+            flash('Post error!', category='error')
  
-    return render_template('add_post.html', menu = dbase.getMenu(), title="Добавление статьи")
+    return render_template('add_post.html', menu = dbase.getMenu(), title="Adding new posts")
 
 
 if __name__ == "__main__":

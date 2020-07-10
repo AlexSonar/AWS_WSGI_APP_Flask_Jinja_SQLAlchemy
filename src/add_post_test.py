@@ -1,10 +1,22 @@
 import sqlite3
 import os
-from flask import Flask, render_template, request, g
+from flask import Flask, render_template, request, flash, g
 from FDataBase import FDataBase
+# import dao.dbc
+from dao.dbc import connect_db, get_db
+# from flask.helpers import flash
 
-from dbconf.dbc import connect_db, dbcconf
-from dbc import connect_db, dbcconf
+# configuration
+DATABASE = 'venv/db/wsgiappdb.db'
+DEBUG = True
+SECRET_KEY = 'dhgkikh6fhfg8ghmh3fg87f'
+USERNAME = 'admin'
+PASSWORD = 'secret'
+
+app = Flask(__name__)
+app.config.from_object(__name__)
+
+app.config.update(dict(DATABASE=os.path.join(app.root_path,'../db/wsgiappdb.db')))
 
 
 connect_db()
@@ -47,6 +59,7 @@ def close_db(error):
     # Закрываем соединение с БД, если оно было установлено
     if hasattr(g, 'link_db'):
         g.link_db.close()
+
 
 
 @app.route("/add_post", methods=["POST", "GET"])

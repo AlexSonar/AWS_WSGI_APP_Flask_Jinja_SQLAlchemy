@@ -4,16 +4,28 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <base href="{{ domain }}">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
     {% if title %}
         <title>Про Flask - {{ title }}</title>
     {% else %}
         <title>Про Flask</title>
     {% endif %}
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}" type="text/css">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}" type="text/css"> -->
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}" type="text/css"> -->
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/theme.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/theme-elements.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/theme-shop.css')}}" type="text/css">
+    <!-- <link rel="stylesheet" href="" type="text/css"> -->
+
+    <!-- <link rel="stylesheet" href="/resources/static/wsgi_theme_ui/css/global.css" type="text/css"> -->
+  
     <!-- <script type="text/javascript" src=""></script> -->
-    <link rel="shortcut icon" href="{{ url_for('static', filename='img/globe_world.ico')}}">        
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/globe_world.ico')}}">  
+    <script src="{{ url_for('static', filename='js/modernizr.min.js')}}"></script>      
 </head>
-<body>
+<body data-gr-c-s-loaded="true">

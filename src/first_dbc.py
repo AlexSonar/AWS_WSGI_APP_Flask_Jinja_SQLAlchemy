@@ -1,11 +1,12 @@
 import sqlite3
 import os
 from flask import Flask, render_template, request, g
-from FDataBase import FDataBase
+# from FDataBase import FDataBase
+from dao.Mmenu import Mmenu
 
 
 # configuration
-DATABASE = 'venv/db/wsgiappdb.db'
+DATABASE = '../db/wsgiappdb.db'
 DEBUG = True
 SECRET_KEY = 'dhgkikh6fhfg8ghmh3fg87f'
 USERNAME = 'admin'
@@ -46,7 +47,7 @@ def get_db():
 @app.route("/")
 def index():
     db = get_db()
-    dbase = FDataBase(db)
+    dbase = Mmenu(db)
     # print("test-2", dbase.getMenu())
     return render_template('index.html', menu = dbase.getMenu())
 # def index():
