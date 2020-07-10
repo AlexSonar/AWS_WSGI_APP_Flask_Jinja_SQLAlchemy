@@ -1,0 +1,16 @@
+<section class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="breadcrumb">
+                    <li><a href="/#">Home</a></li>		
+                    {% if title %}
+                        <li class="active">{{ title }}</li>
+                    {% else %}
+                        <li class="active">_ </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

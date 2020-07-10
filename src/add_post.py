@@ -69,16 +69,19 @@ def close_db(error):
 def addPost():
     db = get_db()
     dbase = FDataBase(db)
+    # msg_suc = '''<strong><i class="fa fa-thumbs-o-up"></i> tttttttu</strong>Post aded sucsesfuly!'''
+    # file:///home/alex/Documents/ENV_App_Front_End/A_aThemeForestSourse/shortcodes-alerts.html
+    msg_suc = '''Post aded sucsesfuly!'''
  
     if request.method == "POST":
         if len(request.form['name']) > 4 and len(request.form['post']) > 10:
             res = dbase.addPost(request.form['name'], request.form['post'])
             if not res:
-                flash('Error post adition!', category = 'error')
+                flash('Error post adition!', category = 'alert alert-danger')
             else:
-                flash('Post aded sucsesfuly!', category='success')
+                flash(msg_suc, category='alert alert-success')
         else:
-            flash('Post error!', category='error')
+            flash('Post error!', category='alert alert-danger')
  
     return render_template('add_post.html', menu = dbase.getMenu(), title="Adding new posts")
 

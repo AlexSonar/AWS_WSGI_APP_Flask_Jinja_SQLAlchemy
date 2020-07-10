@@ -1,0 +1,28 @@
+{% include 'structure/header.html' ignore missing %}
+<div class="body">
+	{% include 'structure/mainmenu.html' ignore missing %}
+	{% include 'structure/breadcrumb.html' ignore missing %}
+			<div class="container">
+				<div class="row">
+					<div class="col-md-9">
+						{% if title %}
+						<H1>{{ title }}<strong> creative</strong></H1>
+					{% else %}
+						<H1>All about <strong>WEB</strong> development</H1>
+					{% endif %} 
+					
+					{% block content -%}
+				
+					{% endblock -%}
+					</div>
+					{% include 'structure/rsidemenu.html' ignore missing %}					
+				</div>
+			</div>
+    <div class="content"> 
+    </div>
+</div>
+
+<a class="scroll-to-top hidden-mobile visible" href="#">
+<i class="fa fa-chevron-up"></i>
+</a>
+{% include 'structure/footer.html' %}
