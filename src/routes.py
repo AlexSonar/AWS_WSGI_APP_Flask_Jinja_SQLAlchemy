@@ -24,6 +24,13 @@ def index():
     return render_template('index.html', title="Index page", menu=menu)
 
 
+@app.route("/test")
+def test():
+    print("loaded" + url_for('test'))
+    return render_template('test.html', title="Testing page", menu=menu)
+
+
+
 @app.route("/login", methods=["POST", "GET"])
 def login():
     if 'userLogged' in session:

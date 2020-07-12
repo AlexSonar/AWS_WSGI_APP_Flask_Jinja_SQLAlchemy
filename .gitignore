@@ -9,7 +9,9 @@ venv/share/
 venv/src/not_for_git/
 src/not_for_the_git/
 src/resources/
+src/static/vendor/
 src/static/css/
+src/static/js/
 target/
 node_modules/
 .vscode
