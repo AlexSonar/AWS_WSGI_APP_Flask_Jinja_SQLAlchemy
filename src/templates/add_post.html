@@ -1,4 +1,4 @@
-{% extends 'base_page.html' %}
+{% extends 'structure/body.html' %}
  
 {% block content %}
 {{ super() }}
@@ -11,6 +11,13 @@
     <label class="col-md-2 control-label" for="inputDefault">Title:</label>
     <div class="col-md-12">
         <input type="text" name="name" class="form-control"  id="inputDefault" value="" requied />
+    </div>
+    
+</div>
+<div class="form-group">
+    <label class="col-md-2 control-label" for="inputDefault">URL:</label>
+    <div class="col-md-12">
+        <input type="text" name="url" class="form-control"  id="inputDefault" value="" requied />
     </div>
     
 </div>

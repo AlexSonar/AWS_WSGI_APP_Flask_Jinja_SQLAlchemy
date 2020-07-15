@@ -2,6 +2,5 @@
  
 {% block content %}
 {{ super() }}
-<H1>404</H1>
-<h2>Sorry the page you requested was not found</h2>
+{{ post | safe}}
 {% endblock %}

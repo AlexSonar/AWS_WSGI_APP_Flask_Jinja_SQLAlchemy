@@ -18,6 +18,20 @@
         </ul>
         <!-- {% include 'layouts/block_popularPosts.tpl' ignore missing %} --> 
         <hr>
+
+
+
+        <h4 class="heading-primary">Posts</h4>
+<ul class="list-posts">
+{% for p in posts %}
+<li>
+<p class="title"><a href="{{ url_for('showPost', alias_post=p.url)}}">{{p.title}}</a></p>
+<p class="annonce">{{ p.text[:50] | striptags }} ...</p>
+</li>
+{% endfor %}
+</ul>
+
+
         {% include 'layouts/block_info.tpl' ignore missing %}
         {% include 'layouts/block_advertising.tpl' ignore missing %}       
     </aside>

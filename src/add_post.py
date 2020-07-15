@@ -1,6 +1,6 @@
 import sqlite3
 import os
-from flask import Flask, render_template, request, g
+from flask import Flask, render_template, request, g, abort
 from FDataBase import FDataBase
 from flask.helpers import flash
 
@@ -51,6 +51,7 @@ def index():
     db = get_db()
     dbase = FDataBase(db)
     # print("test-2", dbase.getMenu())
+    
     return render_template('index.html', menu = dbase.getMenu())
 # def index():
 #     db = get_db()
@@ -75,7 +76,7 @@ def addPost():
  
     if request.method == "POST":
         if len(request.form['name']) > 4 and len(request.form['post']) > 10:
-            res = dbase.addPost(request.form['name'], request.form['post'])
+            res = dbase.addPost(request.form['name'], request.form['post'], request.form['url'])
             if not res:
                 flash('Error post adition!', category = 'alert alert-danger')
             else:
@@ -83,7 +84,23 @@ def addPost():
         else:
             flash('Post error!', category='alert alert-danger')
  
-    return render_template('add_post.html', menu = dbase.getMenu(), title="Adding new posts")
+    return render_template('add_post.html', menu = dbase.getMenu(), title="Adding new posts", posts=dbase.getPostsAnonce())
+
+
+# Show the post 
+# http://127.0.0.1:5000/post/1 /post/<int:id_post>
+# def showPost(id_post):
+# title, post = dbase.getPost(id_post)
+@app.route("/post/<alias_post>")
+def showPost(alias_post):
+    db = get_db()
+    dbase = FDataBase(db)
+    title, post = dbase.getPost(alias_post)
+    if not title:
+        abort(404)
+ 
+    return render_template('post.html', menu=dbase.getMenu(), title=title, post=post, posts=dbase.getPostsAnonce())
+
 
 
 if __name__ == "__main__":

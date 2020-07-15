@@ -3,3 +3,7 @@ id integer primary key autoincrement,
 title text not null,
 url text not null
 );
+
+-- date_created
+-- date modifyed
+-- autor

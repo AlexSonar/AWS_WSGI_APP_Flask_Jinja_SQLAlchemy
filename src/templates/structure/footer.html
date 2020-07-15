@@ -1,10 +1,9 @@
 <footer id="footer">
-	<p>© 2020 created by Alex Sonar Open Source Initiative <a href="mitl
-		">ПThe MIT License</a>  </p>
-	<p><a href="https://test-fix/confidencial">Политика конфиденциальности</a> | <a href="https://test-fix/terms">Пользовательское соглашение</a></p>
+	
+	
 
 
-<div class="container">
+<!-- <div class="container">
 	<div class="row">
 		<div class="footer-ribbon">
 			<span>Get in Touch</span>
@@ -55,24 +54,27 @@
 			</ul>
 		</div>
 	</div>
-</div>
+</div> -->
 <div class="footer-copyright">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-1">
-				<a href="index.html" class="logo">
-					<img alt="Porto Website Template" class="img-responsive" src="img/logo-footer.png">
+				<a href="index" class="logo">
+					
+					<img alt="WSGI" class="img-responsive" src="{{ url_for('static', filename='img/wsgi-logo.png')}}">
 				</a>
 			</div>
-			<div class="col-md-7">
-				<p>© Copyright 2017. All Rights Reserved.</p>
+			<div class="col-md-7">				
+				<p>© 2020 created by Alex Sonar Open Source Initiative <a href="mitl">The MIT License</a>  </p>
 			</div>
 			<div class="col-md-4">
 				<nav id="sub-menu">
 					<ul>
-						<li><a href="page-faq.html">FAQ's</a></li>
-						<li><a href="sitemap.html">Sitemap</a></li>
-						<li><a href="contact-us.html">Contact</a></li>
+						<li><a href="confidencial">Privacy policy</a></li>
+						<li><a href="terms">User agreement</a></li>
+						<!-- <li><a href="page-faq.html">FAQ's</a></li>	-->
+						<!-- <li><a href="sitemap.html">Sitemap</a></li> -->
+						<li><a href="contact-us">Contact</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -84,43 +86,43 @@
 </footer>
 
 
-<script src="static/js/theme.js"></script>
-<script src="static/js/theme.init.js"></script>
-<script src="static/js/bootstrap.min.js"></script>
-<script src="static/js/jquery.min.js"></script>
+<script src="{{ url_for('static', filename='js/theme.js')}}"></script>
+<script src="{{ url_for('static', filename='js/theme.init.js')}}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/jquery.min.js')}}"></script>
 
 
 
 <!-- Vendor -->
-<script src="static/vendor/jquery/jquery.min.js"></script>
-<script src="static/vendor/jquery.appear/jquery.appear.min.js"></script>
-<script src="static/vendor/jquery.easing/jquery.easing.min.js"></script>
-<script src="static/vendor/jquery-cookie/jquery-cookie.min.js"></script>
-<script src="static/vendor/bootstrap/js/bootstrap.min.js"></script>
-<script src="static/vendor/common/common.min.js"></script>
-<script src="static/vendor/jquery.validation/jquery.validation.min.js"></script>
-<script src="static/vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.min.js"></script>
-<script src="static/vendor/jquery.gmap/jquery.gmap.min.js"></script>
-<script src="static/vendor/jquery.lazyload/jquery.lazyload.min.js"></script>
-<script src="static/vendor/isotope/jquery.isotope.min.js"></script>
-<script src="static/vendor/owl.carousel/owl.carousel.min.js"></script>
-<script src="static/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-<script src="static/vendor/vide/vide.min.js"></script>
+<script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js')}}"></script>
+<script src="{{ url_for('static', filename='vendor/jquery.appear/jquery.appear.min.js')}}"></script>
+<script src="{{ url_for('static', filename='vendor/jquery.easing/jquery.easing.min.js')}}"></script>
+<script src="{{ url_for('static', filename='vendor/jquery-cookie/jquery-cookie.min.js')}}"></script>
+<script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.min.js')}}"></script>
+<script src="{{ url_for('static', filename='vendor/common/common.min.js')}}"></script>
+<script src="{{ url_for('static', filename='vendor/jquery.validation/jquery.validation.min.js')}}"></script>
+<script src="{{ url_for('static', filename='vendor/jquery.easy-pie-chart/jquery.easy-pie-chart.min.js')}}"></script>
+<script src="{{ url_for('static', filename='vendor/jquery.gmap/jquery.gmap.min.js')}}"></script>
+<script src="{{ url_for('static', filename='vendor/jquery.lazyload/jquery.lazyload.min.js')}}"></script>
+<script src="{{ url_for('static', filename='vendor/isotope/jquery.isotope.min.js')}}"></script>
+<script src="{{ url_for('static', filename='vendor/owl.carousel/owl.carousel.min.js')}}"></script>
+<script src="{{ url_for('static', filename='vendor/magnific-popup/jquery.magnific-popup.min.js')}}"></script>
+<script src="{{ url_for('static', filename='vendor/vide/vide.min.js')}}"></script>
 
 <!-- Theme Base, Components and Settings -->
-<script src="static/js/theme.js"></script>
+<script src="{{ url_for('static', filename='js/theme.js')}}"></script>
 
 <!-- Current Page Vendor and Views -->
-<script src="static/vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
-<script src="static/vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-<script src="static/vendor/circle-flip-slideshow/js/jquery.flipshow.min.js"></script>
-<script src="static/js/views/view.home.js"></script>
+<script src="{{ url_for('static', filename='vendor/rs-plugin/js/jquery.themepunch.tools.min.js')}}"></script>
+<script src="{{ url_for('static', filename='vendor/rs-plugin/js/jquery.themepunch.revolution.min.js')}}"></script>
+<script src="{{ url_for('static', filename='vendor/circle-flip-slideshow/js/jquery.flipshow.min.js')}}"></script>
+<script src="{{ url_for('static', filename='js/views/view.home.js')}}"></script>
 
 <!-- Theme Custom -->
-<script src="static/js/custom.js"></script>
+<script src="{{ url_for('static', filename='js/custom.js')}}"></script>
 
 <!-- Theme Initialization Files -->
-<script src="static/js/theme.init.js"></script>
+<script src="{{ url_for('static', filename='js/theme.init.js')}}"></script>
 
 
 </body>
